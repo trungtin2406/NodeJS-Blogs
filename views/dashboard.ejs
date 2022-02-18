@@ -1,3 +1,22 @@
-<h1 class="mt-4">Dashboard</h1>
-<p class="lead mb-3">Welcome <%= name %></p>
-<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<%- include('./partials/head') %>
+<%- include('./partials/header') %>
+<head>
+    <style>
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1349px;
+                padding: 0;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button style="margin-left: 20px; background: greenyellow; ">
+            <a href="/api/post" class="link" style="text-decoration: none;">New Article</a>
+        </button>
+        
+    </div>
+</body>
+<!-- <%- include('./partials/footer') %> -->

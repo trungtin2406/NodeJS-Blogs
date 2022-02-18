@@ -57,7 +57,6 @@ const handleRegister = (req, res) => {
                         email,
                         password
                     })
-
                     // Hash password
                     bcrypt.genSalt(10, (err, salt) => {
                             bcrypt.hash(newUser.password, salt, (err, hash) => {
@@ -67,7 +66,8 @@ const handleRegister = (req, res) => {
                                     // Save user
                                 newUser.save()
                                     .then(user => {
-                                        req.flash('success_msg', 'Đăng ký thành công và có thể đăng nhập')
+                                        //req.flash('success_msg', 'Đăng ký thành công và có thể đăng nhập')
+                                        errors.push({ msg: 'Email đã tồn tại!', type:"success" })
                                         res.redirect('/users/login')
                                     })
                                     .catch(err => console.log(err))
