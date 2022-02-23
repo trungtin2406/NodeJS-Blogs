@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs')
 const passport = require('passport')
 
 // get post
-router.get('/post', (req, res) => {
+router.get('/post/:id/create', (req, res) => {
     res.render('post', {title: 'Create a post'})
 })
 //get comment a post
@@ -17,7 +17,7 @@ router.get('/post/:id/comment', (req, res) => {
 //get timeline posts
 router.get("/post/timeline/all", postController.handleTimeline);
 //create a post
-router.post("/post", postController.handelPost);
+router.post("/post/:id/create", postController.handelPost);
 //comment a post
 router.post('/post/:id/comment', postController.handleComment)
 //update a post

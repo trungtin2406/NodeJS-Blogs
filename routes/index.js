@@ -7,6 +7,16 @@ router.get('/', (req, res) => res.render('welcome'))
 router.get('/dashboard', ensuraAuthenticated, (req, res) => 
     res.render('dashboard', {
         name: req.user.name
-    }))
-
+    })
+)
+router.get('/post', ensuraAuthenticated, (req, res) => 
+    res.render('post', {
+        name: req.user.name
+    })
+)
+router.get('/create', ensuraAuthenticated, (req, res) => 
+    res.render('create', {
+        name: req.user.name
+    })
+)
 module.exports = router

@@ -9,14 +9,19 @@
                 margin: 0;
             }
         }
+        .btn-home {
+            padding: 1.375rem 1.7rem;
+            font-size: 2rem;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <button style="margin-left: 20px; background: greenyellow; ">
-            <a href="/api/post" class="link" style="text-decoration: none;">New Article</a>
-        </button>
-        
-    </div>
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Welcome To Blog NodeJS</div>
+            <div class="masthead-heading text-uppercase">HOPE IS A GOOD THING</div>
+            <a class="btn-home btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/post">SHOW POSTS</a>
+        </div>
+    </header>
 </body>
-<!-- <%- include('./partials/footer') %> -->
+<%- include('./partials/footer') %>

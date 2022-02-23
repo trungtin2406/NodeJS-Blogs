@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
             trim: true,
             required: true
         },
+        image: String,
         text: {
             type: String,
             trim: true,

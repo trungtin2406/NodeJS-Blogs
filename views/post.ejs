@@ -9,46 +9,38 @@
                 margin: 0;
             }
         }
+        .jumbotron {
+            padding: 4rem 20px;
+            background: #fff;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">New Post</div>
-    
-                    <div class="card-body">
-                        <form method="post" action="/posts/create" id="new-post-form" enctype="multipart/form-data">
-    
-                            <div class="form-group row">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">Title</label>
-    
-                                <div class="col-md-6">
-                                    <textarea name="description" id="description" class="form-control" required></textarea>
-                                </div>
-                            </div>
-    
-                            <div class="form-group row">
-                                <label for="image" class="col-md-4 col-form-label text-md-right">Image</label>
-    
-                                <div class="col-md-6">
-                                    <input type="file" class="form-control-file" id="image" name="image" required accept="image/*">
-                                </div>
-                            </div>
-    
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        Create
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+        <header class="jumbotron">
+            <div class="container">
+                <h1>Welcome to Blog NodeJS</h1>
+                <p>View posts from users from all over the world</p>
+                <p>
+                    <a class="btn btn-primary btn-large" href="/create">Add a new post</a>
+                </p>
+            </div>
+        </header>
+        <!-- <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+            {{#each posts}}
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <img src="{{this.image}}" width="200" height="200">
+                    <div class="caption">
+                        <h4>{{this.name}}</h4>
                     </div>
+                    <p>
+                        <a href="/posts/{{this._id}}" class="btn btn-primary">More Info</a>
+                    </p>
                 </div>
             </div>
-        </div>
+            {{/each}}
+        </div> -->
     </div>
 </body>
-<%- include('./partials/footer') %>
+<!-- <%- include('./partials/footer') %> -->

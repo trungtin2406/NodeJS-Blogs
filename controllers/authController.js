@@ -66,8 +66,8 @@ const handleRegister = (req, res) => {
                                     // Save user
                                 newUser.save()
                                     .then(user => {
-                                        //req.flash('success_msg', 'Đăng ký thành công và có thể đăng nhập')
-                                        errors.push({ msg: 'Email đã tồn tại!', type:"success" })
+                                        req.flash('success_msg', 'Đăng ký thành công và có thể đăng nhập')
+                                        // errors.push({ msg: 'Email đã tồn tại!', type:"success" })
                                         res.redirect('/users/login')
                                     })
                                     .catch(err => console.log(err))
