@@ -16,12 +16,59 @@
     </style>
 </head>
 <body>
-    <header class="masthead">
+    <section>
+        <div class="gap gray-bg">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row" id="page-contents">
+    
+                            <div class="col-md-9">
+    
+                                <div id="add-post-box"></div>
+    
+                                <div class="loadMore" id="newsfeed">
+    
+                                </div>
+                            </div>
+    
+                            <div class="col-md-3">
+                                <%- include('./partials/right-sidebar') %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">Welcome To Blog NodeJS</div>
             <div class="masthead-heading text-uppercase">HOPE IS A GOOD THING</div>
             <a class="btn-home btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="/post">SHOW POSTS</a>
         </div>
-    </header>
+        <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+            </ul>
+        </div>
+    </header> -->
+    <div class="row text-center" style="display:flex; flex-wrap:wrap;">
+        <%if (title) { %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="" width="200" height="200">
+                <div class="caption">
+                    <h4><%= name %></h4>
+                </div>
+                <p>
+                    <a href="/posts" class="btn btn-primary">More Info</a>
+                </p>
+            </div>
+        </div>
+        <%}%>
+    </div>
 </body>
 <%- include('./partials/footer') %>

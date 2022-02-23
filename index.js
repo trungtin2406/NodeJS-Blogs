@@ -4,9 +4,15 @@ const mongoose = require('mongoose')
 const flash = require('connect-flash')
 const session = require('express-session');
 const passport = require('passport');
+const bodyparser = require('body-parser');
 const postRoute = require("./routes/posts");
 
 const app = express()
+app.use(bodyparser.urlencoded({
+    extended: true
+}));
+app.use(methodOverride('_method'))
+app.use(bodyparser.json());
 
 // Passport config
 require('./config/passport')(passport)

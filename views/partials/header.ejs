@@ -1,21 +1,31 @@
-<header class="p-3 bg-dark text-white mb-4" style="margin-bottom: 0 !important;">
+<header class="p-3 text-white mb-4" style="margin-bottom: 0 !important; background: #3e4845;">
     <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="/dashboard" class="nav-link px-2 text-white">Home</a></li>
                 <li><a href="/post" class="nav-link px-2 text-white">Articles</a></li>
-                <li><a href="#" class="nav-link px-2 text-white">About</a></li>
             </ul>
             <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                 <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
             </form>
             <div class="text-end">
+                <%if (!name) { %>
                 <button type="button" class="btn btn-outline-light me-2">
-                    <a href="/users/login" class="nav-link px-2">Login</a>
+                    <a href="/users/login" class="nav-link px-2 no-padding">Login</a>
                 </button>
                 <button type="button" class="btn btn-warning">
-                    <a href="/users/register" class="nav-link px-2">Sign-up</a>
+                    <a href="/users/register" class="nav-link px-2 no-padding">Sign-up</a>
                 </button>
+                <% }else{ %>
+                <button type="button" class="btn btn-outline-light me-2">
+                    <% if(loggedIn) { %>
+                        <p style="margin-bottom: 0;"> <%= name %> </p>
+                    <% } %>
+                </button>
+                <button type="button" class="btn btn-warning">
+                    <a href="/users/logout" class="nav-link px-2 no-padding">Log out</a>
+                </button>
+                <%}%>
             </div>
         </div>
     </div>

@@ -3,6 +3,7 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 const passport = require('passport')
 const authController = require('../controllers/authController')
+const middleware = require("../middleware");
 
 // User model
 const User = require('../models/User')
@@ -29,6 +30,7 @@ router.get('/logout', (req, res) => {
     req.flash('success_msg', 'You are logged out');
     res.redirect('/users/login');
 });
+
   
 
 module.exports = router
